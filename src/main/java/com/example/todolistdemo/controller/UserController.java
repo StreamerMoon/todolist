@@ -45,6 +45,12 @@ public class UserController {
         return "ok";
     }
 
+    @GetMapping("/regist")
+    public String regist(@PathVariable("user") User user){
+        userMapper.addUser(user);
+        return "ok";
+    }
+
     @GetMapping("/updateUser")
     public String updateUser(){
         userMapper.updateUser(new User(7,"laoba","111111"));
