@@ -4,7 +4,7 @@ import store from "../store";
 export const login = (data) => {
   return request({
     method: "POST",
-    url: "/user/login",
+    url: "/login",
     data,
   });
 };
@@ -12,7 +12,7 @@ export const login = (data) => {
 export const getUserInfo = (id) => {
   return request({
     method: "GET",
-    url: "/userInfo/get",
+    url: "/user/info",
     params: { userId: id },
     // headers: {
     //   Authorization: `Bearer ${store.state.user.myToken}`,

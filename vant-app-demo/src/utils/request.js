@@ -9,8 +9,8 @@ request.interceptors.request.use(
     //请求发送会经过这里
     //config:本次请求的请求配置对象
     const user = store.state.user;
-    if (user && user.myToken) {
-      config.headers.Authorization = `Bearer ${user.myToken}`;
+    if (user && user.token) {
+      config.headers.Authorization = `Bearer ${user.token}`;
     }
     return config;
   },

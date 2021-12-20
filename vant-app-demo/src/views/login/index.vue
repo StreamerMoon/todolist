@@ -41,12 +41,15 @@ import router from "../../router";
 function useSubmit(user) {
   const store = useStore();
   const onSubmit = async () => {
+    //console.log("=================")
     Toast.loading({
       message: "登录中...",
       forbidClick: true,
     });
+
     const res = await login(user);
-    if (res.data.code === 0) {
+   // console.log(res.data)
+    if (res.data.code === 200) {
       store.commit("setUser", res.data);
       Toast.success("用户登录成功");
       router.push("/my");

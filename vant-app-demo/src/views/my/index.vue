@@ -13,35 +13,17 @@
       <div class="base-info">
         <div class="left">
           <van-image
-            :src="`${url}` + userInfo.photo"
+            :src="userInfo.avatar"
             class="avatar"
             round
             fit="cover"
           ></van-image>
           <span class="name">{{ userInfo.userName }}</span>
         </div>
-        <div class="right">
-          <van-button size="mini" round>编辑资料</van-button>
-        </div>
+<!--        <div class="right">-->
+<!--          <van-button size="mini" round>编辑资料</van-button>-->
+<!--        </div>-->
       </div>
-<!--      <div class="data-stats">-->
-<!--        <div class="data-item">-->
-<!--          <span class="count">{{ userInfo.art_count }}</span>-->
-<!--          <span class="text">头条</span>-->
-<!--        </div>-->
-<!--        <div class="data-item">-->
-<!--          <span class="count">{{ userInfo.follow_count }}</span>-->
-<!--          <span class="text">关注</span>-->
-<!--        </div>-->
-<!--        <div class="data-item">-->
-<!--          <span class="count">{{ userInfo.fans_count }}</span>-->
-<!--          <span class="text">粉丝</span>-->
-<!--        </div>-->
-<!--        <div class="data-item">-->
-<!--          <span class="count">{{ userInfo.like_count }}</span>-->
-<!--          <span class="text">获赞</span>-->
-<!--        </div>-->
-<!--      </div>-->
     </div>
     <!-- 导航 -->
 <!--    <van-grid :column-num="2" clickable>-->
@@ -49,8 +31,8 @@
 <!--      <van-grid-item icon="clock-o" text="历史" />-->
 <!--    </van-grid>-->
     <!-- 消息通知与退出登录布局 -->
-    <van-cell title="消息通知" is-link />
-    <van-cell title="小智同学" is-link />
+    <van-cell title="消息通知"  />
+    <van-cell title="小智同学"  />
     <van-cell
       title="退出登录"
       class="logout-cell"
@@ -92,7 +74,7 @@ function useLoadUserInfo() {
       follow_count: 0,
       fans_count: 0,
       like_count: 0,
-      photo: "",
+      avatar: "",
     },
   });
   const store = useStore();
@@ -163,15 +145,16 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
-.user-info .left {
-  display: flex;
-  align-items: center;
-}
+/*.user-info .left {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*}*/
 .user-info .left .avatar {
   width: 132px;
   height: 132px;
   margin-right: 13px;
   border: 1px solid #fff;
+  text-align: center;
 }
 .user-info .left .name {
   font-size: 16px;
